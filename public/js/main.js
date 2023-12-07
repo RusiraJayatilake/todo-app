@@ -1,9 +1,10 @@
 document.getElementById('addBtn').addEventListener('click', function(){
-    const taskInput = document.querySelector('#newtask input');
+    // const taskInput = document.querySelector('#newtask input');
+    const taskInput = document.getElementById('taskInput');
     const title = taskInput.value.trim();
 
     if(title){
-        fetch('/addItems', {
+        fetch('/api/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

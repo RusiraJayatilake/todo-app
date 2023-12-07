@@ -5,14 +5,14 @@ const Todo = require('../models/todo');
 router.get('/', async(req, res) => {
   try{
     const todos = await Todo.find();
-    res.render('index', { todos });
+    res.render('indextest', { todos });
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
 // Route to add a new Todo
-router.post('/addItems', async (req, res) => {
+router.post('/api/add', async (req, res) => {
   const { title } = req.body;
 
   // Create a new Todo
